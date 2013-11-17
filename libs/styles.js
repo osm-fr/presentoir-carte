@@ -6,12 +6,12 @@
 //base styles (not transparent)
 var all_available_styles = [
   {
-    id: '2u',
-    name: '2u', 
-    tile_urls: [ 'http://a.layers.openstreetmap.fr/2u/${z}/${x}/${y}.png', 'http://b.layers.openstreetmap.fr/2u/${z}/${x}/${y}.png', 'http://c.layers.openstreetmap.fr/2u/${z}/${x}/${y}.png' ],
-    attribution: '<a href="http://wiki.openstreetmap.org/wiki/2u">2u</a> &copy; <a href="http://wiki.openstreetmap.org/wiki/User:Sletuffe">sly</a>',
-    description: '<a href="http://wiki.openstreetmap.org/wiki/2u">2u</a> from sly'
-  },
+    id: 'osmfr',
+    name: 'osmfr',
+    tile_urls: [ 'http://a.tile.openstreetmap.fr/osmfr/${z}/${x}/${y}.png', 'http://b.tile.openstreetmap.fr/osmfr/${z}/${x}/${y}.png', 'http://c.tile.openstreetmap.fr/osmfr/${z}/${x}/${y}.png' ],
+    attribution: '&copy; Openstreetmap France',
+    description: 'Tuiles "Fr"'
+  },  
   {
     id: 'default@osm.org',
     name: 'default@OSM.org', 
