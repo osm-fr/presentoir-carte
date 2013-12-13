@@ -301,8 +301,8 @@ function mapMoved() {
 	$ts = exec("date +%s -d \"$(wget -qO - http://osm2pgsql-monde.openstreetmap.fr/~osm2pgsql/state.txt | grep timestamp= | cut -f2- -d=  | sed -e 's/\\\\//g' -e s/.$// | sed -e 's/T/ /')\"");
 	setlocale(LC_TIME, "fr_FR.UTF8");
 	print strftime("%A&nbsp;%e&nbsp;%B&nbsp;%Y&nbsp;%H:%M:%S&nbsp;UTC", $ts);
-	if (is_file("./tiles/maintenance.png"))
-	  print("<font color=\"red\">The server is currently in maintenance</font>");
+	if (is_file("./maintenance"))
+	  print("<font color=\"red\">The server is currently in maintenance or experiencing problems</font>");
 	?>
 </p>
 </div>

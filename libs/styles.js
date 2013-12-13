@@ -1,7 +1,9 @@
 // liste des styles disponibles
-// posait problème avec le cache, et puis long à charger pour rien
-// puis le titre était pas librement modifiable, ni l'ordre
-//, je peux bien faire l'effort de générer ça à chaque rare changement !
+// Dans une vie postérieure, cette liste pourra être dynamiquement générée en interrogeant les serveurs de rendus et les styles dont ils disposent -- sly
+
+var base_url = [ 'http://a.layers.openstreetmap.fr/',
+                 'http://b.layers.openstreetmap.fr/',
+                 'http://c.layers.openstreetmap.fr/' ];
 
 //base styles (not transparent)
 var all_available_styles = [
@@ -31,14 +33,14 @@ var all_available_styles = [
   {
     id: 'white',
     name: 'Fond blanc', 
-    tile_urls: [ 'http://a.layers.openstreetmap.fr/images/blanc.png' ],
+    tile_urls: [ base_url[0] + 'images/blanc.png' ],
     attribution: 'Fond blanc',
     description: 'Fond blanc pour mieux lire les overlays'
   },
   {
     id: 'openriverboatmap',
     name: 'openriverboatmap', 
-    tile_urls: [ 'http://a.layers.openstreetmap.fr/openriverboatmap/${z}/${x}/${y}.png', 'http://b.layers.openstreetmap.fr/openriverboatmap/${z}/${x}/${y}.png', 'http://c.layers.openstreetmap.fr/openriverboatmap/${z}/${x}/${y}.png' ],
+    tile_urls: [ base_url[0] + 'openriverboatmap/${z}/${x}/${y}.png', base_url[1] + 'openriverboatmap/${z}/${x}/${y}.png', base_url[2] + 'openriverboatmap/${z}/${x}/${y}.png' ],
     attribution: 'Calque &copy; ybon',
     description: 'openriverboatmap de ybon'
   }
@@ -49,147 +51,154 @@ var all_available_overlays = [
   {
     id: 'noname',
     name: 'Voies sans nom', 
-    tile_urls: [ 'http://a.layers.openstreetmap.fr/noname/${z}/${x}/${y}.png', 'http://b.layers.openstreetmap.fr/noname/${z}/${x}/${y}.png', 'http://c.layers.openstreetmap.fr/noname/${z}/${x}/${y}.png' ],
+    tile_urls: [ base_url[0] + 'noname/${z}/${x}/${y}.png', base_url[1] + 'noname/${z}/${x}/${y}.png', base_url[2] + 'noname/${z}/${x}/${y}.png' ],
     attribution: 'Calque &copy; <a href="http://wiki.openstreetmap.org/wiki/User:Sletuffe">sly</a>',
     description: 'Voies sans nom en surbrillance'
   },
   {
     id: 'nooneway',
     name: 'Pas de oneway', 
-    tile_urls: [ 'http://a.layers.openstreetmap.fr/nooneway/${z}/${x}/${y}.png', 'http://b.layers.openstreetmap.fr/nooneway/${z}/${x}/${y}.png', 'http://c.layers.openstreetmap.fr/nooneway/${z}/${x}/${y}.png' ],
+    tile_urls: [ base_url[0] + 'nooneway/${z}/${x}/${y}.png', base_url[1] + 'nooneway/${z}/${x}/${y}.png', base_url[2] + 'nooneway/${z}/${x}/${y}.png' ],
     attribution: 'Calque &copy; <a href="http://wiki.openstreetmap.org/wiki/User:Sletuffe">sly</a>',
     description: 'Voies sans oneway en surbrillance'
   },
   {
     id: 'noref',
     name: 'Pas de ref', 
-    tile_urls: [ 'http://a.layers.openstreetmap.fr/noref/${z}/${x}/${y}.png', 'http://b.layers.openstreetmap.fr/noref/${z}/${x}/${y}.png', 'http://c.layers.openstreetmap.fr/noref/${z}/${x}/${y}.png' ],
+    tile_urls: [ base_url[0] + 'noref/${z}/${x}/${y}.png', base_url[1] + 'noref/${z}/${x}/${y}.png', base_url[2] + 'noref/${z}/${x}/${y}.png' ],
     attribution: 'Calque &copy; <a href="http://wiki.openstreetmap.org/wiki/User:Sletuffe">sly</a>',
     description: 'Voies importantes sans ref en surbrillance'
   },
   {
     id: 'noref-notertiary',
     name:'Pas de ref (sauf tertiary)',
-    tile_urls: [ 'http://a.layers.openstreetmap.fr/noref-notertiary/${z}/${x}/${y}.png', 'http://b.layers.openstreetmap.fr/noref-notertiary/${z}/${x}/${y}.png', 'http://c.layers.openstreetmap.fr/noref-notertiary/${z}/${x}/${y}.png' ],
+    tile_urls: [ base_url[0] + 'noref-notertiary/${z}/${x}/${y}.png', base_url[1] + 'noref-notertiary/${z}/${x}/${y}.png', base_url[2] + 'noref-notertiary/${z}/${x}/${y}.png' ],
     attribution: 'Calque &copy; <a href="http://wiki.openstreetmap.org/wiki/User:Sletuffe">sly</a>',
     description: '',
   },
   {
     id: 'fixme',
     name: 'Fixme tags', 
-    tile_urls: [ 'http://a.layers.openstreetmap.fr/fixme/${z}/${x}/${y}.png', 'http://b.layers.openstreetmap.fr/fixme/${z}/${x}/${y}.png', 'http://c.layers.openstreetmap.fr/fixme/${z}/${x}/${y}.png' ],
+    tile_urls: [ base_url[0] + 'fixme/${z}/${x}/${y}.png', base_url[1] + 'fixme/${z}/${x}/${y}.png', base_url[2] + 'fixme/${z}/${x}/${y}.png' ],
     attribution: 'Calque &copy; <a href="http://wiki.openstreetmap.org/wiki/User:Sletuffe">sly</a>',
     description: 'Elements possédant un tag fixme en surbrillance'
   },
   {
     id: 'note',
     name: 'Note tags', 
-    tile_urls: [ 'http://a.layers.openstreetmap.fr/note/${z}/${x}/${y}.png', 'http://b.layers.openstreetmap.fr/note/${z}/${x}/${y}.png', 'http://c.layers.openstreetmap.fr/note/${z}/${x}/${y}.png' ],
+    tile_urls: [ base_url[0] + 'note/${z}/${x}/${y}.png', base_url[1] + 'note/${z}/${x}/${y}.png', base_url[2] + 'note/${z}/${x}/${y}.png' ],
     attribution: 'Calque &copy; <a href="http://wiki.openstreetmap.org/wiki/User:Sletuffe">sly</a>',
     description: 'Elements possédant un tag note en surbrillance'
   },
   {
     id: 'my_own',
     name:'my_own',
-    tile_urls: [ 'http://a.layers.openstreetmap.fr/my_own/${z}/${x}/${y}.png', 'http://b.layers.openstreetmap.fr/my_own/${z}/${x}/${y}.png', 'http://c.layers.openstreetmap.fr/my_own/${z}/${x}/${y}.png' ],
+    tile_urls: [ base_url[0] + 'my_own/${z}/${x}/${y}.png', base_url[1] + 'my_own/${z}/${x}/${y}.png', base_url[2] + 'my_own/${z}/${x}/${y}.png' ],
     attribution: 'Calque &copy; <a href="http://wiki.openstreetmap.org/wiki/User:Sletuffe">sly</a>',
     description: '',
   },
   {
     id: 'admin2',
     name:'admin2 (Pays)',
-    tile_urls: [ 'http://a.layers.openstreetmap.fr/admin2/${z}/${x}/${y}.png', 'http://b.layers.openstreetmap.fr/admin2/${z}/${x}/${y}.png', 'http://c.layers.openstreetmap.fr/admin2/${z}/${x}/${y}.png' ],
+    tile_urls: [ base_url[0] + 'admin2/${z}/${x}/${y}.png', base_url[1] + 'admin2/${z}/${x}/${y}.png', base_url[2] + 'admin2/${z}/${x}/${y}.png' ],
+    attribution: 'Calque &copy; <a href="http://wiki.openstreetmap.org/wiki/User:Sletuffe">sly</a>',
+    description: '',
+  },
+  {
+    id: 'admin3',
+    name:'admin3',
+    tile_urls: [ base_url[0] + 'admin3/${z}/${x}/${y}.png', base_url[1] + 'admin3/${z}/${x}/${y}.png', base_url[2] + 'admin3/${z}/${x}/${y}.png' ],
     attribution: 'Calque &copy; <a href="http://wiki.openstreetmap.org/wiki/User:Sletuffe">sly</a>',
     description: '',
   },
   {
     id: 'admin4',
     name:'admin4 (Régions)',
-    tile_urls: [ 'http://a.layers.openstreetmap.fr/admin4/${z}/${x}/${y}.png', 'http://b.layers.openstreetmap.fr/admin4/${z}/${x}/${y}.png', 'http://c.layers.openstreetmap.fr/admin4/${z}/${x}/${y}.png' ],
+    tile_urls: [ base_url[0] + 'admin4/${z}/${x}/${y}.png', base_url[1] + 'admin4/${z}/${x}/${y}.png', base_url[2] + 'admin4/${z}/${x}/${y}.png' ],
     attribution: 'Calque &copy; <a href="http://wiki.openstreetmap.org/wiki/User:Sletuffe">sly</a>',
     description: '',
   },
   {
     id: 'admin5',
     name:'admin5',
-    tile_urls: [ 'http://a.layers.openstreetmap.fr/admin5/${z}/${x}/${y}.png', 'http://b.layers.openstreetmap.fr/admin5/${z}/${x}/${y}.png', 'http://c.layers.openstreetmap.fr/admin5/${z}/${x}/${y}.png' ],
+    tile_urls: [ base_url[0] + 'admin5/${z}/${x}/${y}.png', base_url[1] + 'admin5/${z}/${x}/${y}.png', base_url[2] + 'admin5/${z}/${x}/${y}.png' ],
     attribution: 'Calque &copy; <a href="http://wiki.openstreetmap.org/wiki/User:Sletuffe">sly</a>',
     description: '',
   },
   {
     id: 'admin6',
     name:'admin6 (Départements)',
-    tile_urls: [ 'http://a.layers.openstreetmap.fr/admin6/${z}/${x}/${y}.png', 'http://b.layers.openstreetmap.fr/admin6/${z}/${x}/${y}.png', 'http://c.layers.openstreetmap.fr/admin6/${z}/${x}/${y}.png' ],
+    tile_urls: [ base_url[0] + 'admin6/${z}/${x}/${y}.png', base_url[1] + 'admin6/${z}/${x}/${y}.png', base_url[2] + 'admin6/${z}/${x}/${y}.png' ],
     attribution: 'Calque &copy; <a href="http://wiki.openstreetmap.org/wiki/User:Sletuffe">sly</a>',
     description: '',
   },
   {
     id: 'admin7 (Arondissements)',
     name:'admin7',
-    tile_urls: [ 'http://a.layers.openstreetmap.fr/admin7/${z}/${x}/${y}.png', 'http://b.layers.openstreetmap.fr/admin7/${z}/${x}/${y}.png', 'http://c.layers.openstreetmap.fr/admin7/${z}/${x}/${y}.png' ],
+    tile_urls: [ base_url[0] + 'admin7/${z}/${x}/${y}.png', base_url[1] + 'admin7/${z}/${x}/${y}.png', base_url[2] + 'admin7/${z}/${x}/${y}.png' ],
     attribution: 'Calque &copy; <a href="http://wiki.openstreetmap.org/wiki/User:Sletuffe">sly</a>',
     description: '',
   },
   {
     id: 'admin8',
     name:'admin8 (Communes)',
-    tile_urls: [ 'http://a.layers.openstreetmap.fr/admin8/${z}/${x}/${y}.png', 'http://b.layers.openstreetmap.fr/admin8/${z}/${x}/${y}.png', 'http://c.layers.openstreetmap.fr/admin8/${z}/${x}/${y}.png' ],
+    tile_urls: [ base_url[0] + 'admin8/${z}/${x}/${y}.png', base_url[1] + 'admin8/${z}/${x}/${y}.png', base_url[2] + 'admin8/${z}/${x}/${y}.png' ],
     attribution: 'Calque &copy; <a href="http://wiki.openstreetmap.org/wiki/User:Sletuffe">sly</a>',
     description: '',
   },
   {
     id: 'admin9',
     name:'admin9',
-    tile_urls: [ 'http://a.layers.openstreetmap.fr/admin9/${z}/${x}/${y}.png', 'http://b.layers.openstreetmap.fr/admin9/${z}/${x}/${y}.png', 'http://c.layers.openstreetmap.fr/admin9/${z}/${x}/${y}.png' ],
+    tile_urls: [ base_url[0] + 'admin9/${z}/${x}/${y}.png', base_url[1] + 'admin9/${z}/${x}/${y}.png', base_url[2] + 'admin9/${z}/${x}/${y}.png' ],
     attribution: 'Calque &copy; <a href="http://wiki.openstreetmap.org/wiki/User:Sletuffe">sly</a>',
     description: '',
   },
   {
     id: 'admin10',
     name:'admin10 (Quartiers)',
-    tile_urls: [ 'http://a.layers.openstreetmap.fr/admin10/${z}/${x}/${y}.png', 'http://b.layers.openstreetmap.fr/admin10/${z}/${x}/${y}.png', 'http://c.layers.openstreetmap.fr/admin10/${z}/${x}/${y}.png' ],
+    tile_urls: [ base_url[0] + 'admin10/${z}/${x}/${y}.png', base_url[1] + 'admin10/${z}/${x}/${y}.png', base_url[2] + 'admin10/${z}/${x}/${y}.png' ],
     attribution: 'Calque &copy; <a href="http://wiki.openstreetmap.org/wiki/User:Sletuffe">sly</a>',
     description: '',
   },
   {
     id: 'boundary_local_authority',
     name:'boundary_local_authority',
-    tile_urls: [ 'http://a.layers.openstreetmap.fr/boundary_local_authority/${z}/${x}/${y}.png', 'http://b.layers.openstreetmap.fr/boundary_local_authority/${z}/${x}/${y}.png', 'http://c.layers.openstreetmap.fr/boundary_local_authority/${z}/${x}/${y}.png' ],
+    tile_urls: [ base_url[0] + 'boundary_local_authority/${z}/${x}/${y}.png', base_url[1] + 'boundary_local_authority/${z}/${x}/${y}.png', base_url[2] + 'boundary_local_authority/${z}/${x}/${y}.png' ],
     attribution: 'Calque &copy; <a href="http://wiki.openstreetmap.org/wiki/User:Sletuffe">sly</a>',
     description: '',
   },
   {
     id: 'boundary_political',
     name:'boundary_political',
-    tile_urls: [ 'http://a.layers.openstreetmap.fr/boundary_political/${z}/${x}/${y}.png', 'http://b.layers.openstreetmap.fr/boundary_political/${z}/${x}/${y}.png', 'http://c.layers.openstreetmap.fr/boundary_political/${z}/${x}/${y}.png' ],
+    tile_urls: [ base_url[0] + 'boundary_political/${z}/${x}/${y}.png', base_url[1] + 'boundary_political/${z}/${x}/${y}.png', base_url[2] + 'boundary_political/${z}/${x}/${y}.png' ],
     attribution: 'Calque &copy; <a href="http://wiki.openstreetmap.org/wiki/User:Sletuffe">sly</a>',
     description: '',
   },
   {
     id: 'boundary_cantons',
     name:'Cantons &amp; Politique',
-    tile_urls: [ 'http://a.layers.openstreetmap.fr/boundary_cantons/${z}/${x}/${y}.png', 'http://b.layers.openstreetmap.fr/boundary_cantons/${z}/${x}/${y}.png', 'http://c.layers.openstreetmap.fr/boundary_cantons/${z}/${x}/${y}.png' ],
+    tile_urls: [ base_url[0] + 'boundary_cantons/${z}/${x}/${y}.png', base_url[1] + 'boundary_cantons/${z}/${x}/${y}.png', base_url[2] + 'boundary_cantons/${z}/${x}/${y}.png' ],
     attribution: 'Calque &copy; <a href="http://wiki.openstreetmap.org/wiki/User:Sletuffe">sly</a>',
     description: '',
   },
   {
     id: 'boundary_election',
     name:'boundary_election',
-    tile_urls: [ 'http://a.layers.openstreetmap.fr/boundary_election/${z}/${x}/${y}.png', 'http://b.layers.openstreetmap.fr/boundary_election/${z}/${x}/${y}.png', 'http://c.layers.openstreetmap.fr/boundary_election/${z}/${x}/${y}.png' ],
+    tile_urls: [ base_url[0] + 'boundary_election/${z}/${x}/${y}.png', base_url[1] + 'boundary_election/${z}/${x}/${y}.png', base_url[2] + 'boundary_election/${z}/${x}/${y}.png' ],
     attribution: 'Calque &copy; <a href="http://wiki.openstreetmap.org/wiki/User:Sletuffe">sly</a>',
     description: '',
   },
   {
     id: 'voirie-cadastre',
     name:'Voirie/Cadastre (rouge=manque)',
-    tile_urls: [ 'http://a.layers.openstreetmap.fr/voirie-cadastre/${z}/${x}/${y}.png', 'http://b.layers.openstreetmap.fr/voirie-cadastre/${z}/${x}/${y}.png', 'http://c.layers.openstreetmap.fr/voirie-cadastre/${z}/${x}/${y}.png' ],
+    tile_urls: [ base_url[0] + 'voirie-cadastre/${z}/${x}/${y}.png', base_url[1] + 'voirie-cadastre/${z}/${x}/${y}.png', base_url[2] + 'voirie-cadastre/${z}/${x}/${y}.png' ],
     attribution: 'Calque &copy; <a href="http://wiki.openstreetmap.org/wiki/User:Sletuffe">sly</a>',
     description: '',
   },
   {
     id: 'admin_boundary',
     name:'Ways with admin boundary',
-    tile_urls: [ 'http://a.layers.openstreetmap.fr/admin_boundary/${z}/${x}/${y}.png', 'http://b.layers.openstreetmap.fr/admin_boundary/${z}/${x}/${y}.png', 'http://c.layers.openstreetmap.fr/admin_boundary/${z}/${x}/${y}.png' ],
+    tile_urls: [ base_url[0] + 'admin_boundary/${z}/${x}/${y}.png', base_url[1] + 'admin_boundary/${z}/${x}/${y}.png', base_url[2] + 'admin_boundary/${z}/${x}/${y}.png' ],
     attribution: 'Calque &copy; <a href="http://wiki.openstreetmap.org/wiki/User:Sletuffe">sly</a>',
     description: '',
   }
