@@ -30,19 +30,27 @@ var all_available_styles = [
     description: 'Tuiles OpenMapQuest',
     numZoomLevels: 19
   },
-  {
+/*  {
     id: 'white',
     name: 'Fond blanc', 
     tile_urls: [ base_url[0] + 'images/blanc.png' ],
     attribution: 'Fond blanc',
     description: 'Fond blanc pour mieux lire les overlays'
   },
+*/
   {
-    id: 'openriverboatmap',
-    name: 'openriverboatmap', 
-    tile_urls: [ base_url[0] + 'openriverboatmap/${z}/${x}/${y}.png', base_url[1] + 'openriverboatmap/${z}/${x}/${y}.png', base_url[2] + 'openriverboatmap/${z}/${x}/${y}.png' ],
+    id: 'hot',
+    name: 'HOT-HDM (tile)',
+    tile_urls: [ 'http://a.tile.openstreetmap.fr/hot/${z}/${x}/${y}.png', 'http://b.tile.openstreetmap.fr/hot/${z}/${x}/${y}.png', 'http://c.tile.openstreetmap.fr/hot/${z}/${x}/${y}.png' ],
     attribution: 'Calque &copy; ybon',
-    description: 'openriverboatmap de ybon'
+    description: 'HOT-HDM de ybon'
+  },
+  {
+    id: 'bw',
+    name: 'OSM - monochrome', 
+    tile_urls: 'http://www.toolserver.org/tiles/bw-mapnik//${z}/${x}/${y}.png',
+    attribution: 'basemap data &copy; <a href="http://osm.org/copyright" target="_blank">OpenStreetMap</a>',
+    description: 'OSM monochrome'
   }
 ];
 
@@ -189,17 +197,18 @@ var all_available_overlays = [
     description: '',
   },
   {
-    id: 'voirie-cadastre',
-    name:'Voirie/Cadastre (rouge=manque)',
-    tile_urls: [ base_url[0] + 'voirie-cadastre/${z}/${x}/${y}.png', base_url[1] + 'voirie-cadastre/${z}/${x}/${y}.png', base_url[2] + 'voirie-cadastre/${z}/${x}/${y}.png' ],
-    attribution: 'Calque &copy; <a href="http://wiki.openstreetmap.org/wiki/User:Sletuffe">sly</a>',
-    description: '',
-  },
-  {
     id: 'admin_boundary',
     name:'Ways with admin boundary',
     tile_urls: [ base_url[0] + 'admin_boundary/${z}/${x}/${y}.png', base_url[1] + 'admin_boundary/${z}/${x}/${y}.png', base_url[2] + 'admin_boundary/${z}/${x}/${y}.png' ],
     attribution: 'Calque &copy; <a href="http://wiki.openstreetmap.org/wiki/User:Sletuffe">sly</a>',
     description: '',
+  },
+  {
+    id: 'bano',
+    name:'BANO - Couverture',
+    tile_urls: [ base_url[0] + 'bano/${z}/${x}/${y}.png', base_url[1] + 'bano/${z}/${x}/${y}.png', base_url[2] + 'bano/${z}/${x}/${y}.png' ],
+    attribution: '<a href="https://wiki.openstreetmap.org/wiki/WikiProject_France/WikiProject_Base_Adresses_Nationale_Ouverte_(BANO)">BANO</a> - Calque &copy; <a href="http://wiki.openstreetmap.org/wiki/User:Cquest">cquest</a>',
+    description: '',
   }
+
 ];
