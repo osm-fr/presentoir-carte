@@ -77,6 +77,14 @@ var all_available_styles = [
 // overlays (transparent)
 var all_available_overlays = [
     {
+        id: 'cadastre',
+        name: 'Cadastre',
+        tile_urls: ['https://tms.cadastre.openstreetmap.fr/*/tout/${z}/${x}/${y}.png'],
+        attribution: 'cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. <a href="https://wiki.openstreetmap.org/wiki/WikiProject_Cadastre_Fran%C3%A7ais/Conditions_d%27utilisation">Conditions d&apos;utilisation</a>.'
+        minZoomLevel: 12
+        numZoomLevels: 22
+    },
+    {
         id: 'noname',
         name: 'Voies sans nom',
         tile_urls: [base_url[0] + 'noname/${z}/${x}/${y}.png', base_url[1] + 'noname/${z}/${x}/${y}.png', base_url[2] + 'noname/${z}/${x}/${y}.png'],
