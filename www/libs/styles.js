@@ -27,7 +27,7 @@ var all_available_styles = [
         name: 'HOT-HDM (tile)',
         tile_urls: ['https://a.tile.openstreetmap.fr/hot/${z}/${x}/${y}.png', 'https://b.tile.openstreetmap.fr/hot/${z}/${x}/${y}.png', 'https://c.tile.openstreetmap.fr/hot/${z}/${x}/${y}.png'],
         attribution: 'Calque &copy; ybon',
-        description: 'HOT-HDM de ybon'
+        description: 'HOT Humanitarian Data Model map de Yohan Boniface (ybon)'
     },
     {
         id: 'bw',
