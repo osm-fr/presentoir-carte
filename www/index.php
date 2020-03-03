@@ -157,9 +157,9 @@ function init()
 //  map.addcontrol(layerSwitcher);
   switcher.maximizeControl();
 
-  var permalink_potlatch = new OpenLayers.Control.Permalink("permalink.potlatch");
-  permalink_potlatch.base = "http://www.openstreetmap.org/edit";
-  map.addControl(permalink_potlatch); 
+  var permalink_edit = new OpenLayers.Control.Permalink("permalink.edit");
+  permalink_edit.base = "http://www.openstreetmap.org/edit";
+  map.addControl(permalink_edit); 
 
   var layers = [];
 
@@ -309,8 +309,8 @@ function mapMoved() {
 
 <div id="permalinks">
       <ul>
-        <li><a id="permalink" href="">Permalink</a></li>
-        <li><a id="permalink.potlatch" target="_blank" href="">Edit with Potlatch</a></li>
+        <li><a id="permalink" href="">Lien permanent</a></li>
+        <li><a id="permalink.edit" target="_blank" href="">Améliorer dans OpenStreetMap</a></li>
         <!-- FIXME later  <li><a id="permalink.josm" target="_blank" href="">Edit with JOSM</a></li> -->
       </ul>
 </div>
