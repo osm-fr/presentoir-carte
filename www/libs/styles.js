@@ -80,8 +80,8 @@ var all_available_overlays = [
         id: 'cadastre',
         name: 'Cadastre',
         tile_urls: ['https://tms.cadastre.openstreetmap.fr/*/tout/${z}/${x}/${y}.png'],
-        attribution: 'cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. <a href="https://wiki.openstreetmap.org/wiki/WikiProject_Cadastre_Fran%C3%A7ais/Conditions_d%27utilisation">Conditions d&apos;utilisation</a>.'
-        minZoomLevel: 12
+        attribution: 'cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. <a href="https://wiki.openstreetmap.org/wiki/WikiProject_Cadastre_Fran%C3%A7ais/Conditions_d%27utilisation">Conditions d&apos;utilisation</a>.',
+        minZoomLevel: 12,
         numZoomLevels: 22
     },
     {
