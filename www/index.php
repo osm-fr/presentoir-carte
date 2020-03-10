@@ -289,10 +289,10 @@ function mapMoved() {
 
 <div id="attributions">
 <p>
-	<a href="http://fondation.free.org/"><img src="http://fondation.free.org/images/logos/logo-hosted-redSmall.png" align=left></a>
+	<a href="https://www.fondation-free.fr"><img src="images/fondation-free-logo.png" align=left></a>
 	<br>
 	Serveur et hébergement donné par la
-	<a href="http://fondation.free.org/">Fondation&nbsp;d'Entreprise&nbsp;Free</a>
+	<a href="https://www.fondation-free.fr">Fondation&nbsp;d'Entreprise&nbsp;Free</a>
 	<br>
 	<a href="<?=$explain_link?>">A propos de ce service / What is this</a><br/>
 
