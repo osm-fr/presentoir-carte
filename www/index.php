@@ -2,7 +2,7 @@
 $image_type="png";
 
 $titre_page="layers.openstreetmap.fr - Tuiles pour contrôle de données / Tile service with data checks";
-$explain_link="http://wiki.openstreetmap.org/wiki/FR:Servers/layers.openstreetmap.fr";
+$explain_link="https://wiki.openstreetmap.org/wiki/FR:Servers/layers.openstreetmap.fr";
 
 ?>
 
@@ -158,7 +158,7 @@ function init()
   switcher.maximizeControl();
 
   var permalink_edit = new OpenLayers.Control.Permalink("permalink.edit");
-  permalink_edit.base = "http://www.openstreetmap.org/edit";
+  permalink_edit.base = "https://www.openstreetmap.org/edit";
   map.addControl(permalink_edit); 
 
   var layers = [];
@@ -173,7 +173,7 @@ function init()
         all_available_styles[idx].name,
         all_available_styles[idx].tile_urls,
         {
-            attribution: all_available_styles[idx].attribution + ' | Données <a href="http://www.openstreetmap.org/copyright">&copy; les contributeurs OpenStreetMap</a>',
+            attribution: all_available_styles[idx].attribution + ' | Données <a href="https://www.openstreetmap.org/copyright">&copy; les contributeurs OpenStreetMap</a>',
             sphericalMercator: true,
             wrapDateLine: true,
             transitionEffect: "resize",
@@ -241,7 +241,7 @@ function refineSearch() {
   var q = $("input#q").val();
   $("#search_results").empty();
 
-  $.get('http://nominatim.openstreetmap.org/search.php?email=nicolas@bouthors.org&format=json&countrycodes=fr&q='+q, function (data) { 
+  $.get('https://nominatim.openstreetmap.org/search.php?email=nicolas@bouthors.org&format=json&countrycodes=fr&q='+q, function (data) { 
     if (data[0]) {
       // map.setCenter(new OpenLayers.LonLat(data[0].lon,data[0].lat).transform( new OpenLayers.Projection("EPSG:4326"), map.getProjectionObject() ), 12); 
       $("#search_results").append('<ul class="search_results">');
@@ -325,7 +325,7 @@ var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 2);
 piwikTracker.trackPageView();
 piwikTracker.enableLinkTracking();
 } catch( err ) {}
-</script><noscript><p><img src="http://openstreetmap.fr/piwik/piwik.php?idsite=2" style="border:0" alt="" /></p></noscript>
+</script><noscript><p><img src="https://openstreetmap.fr/piwik/piwik.php?idsite=2" style="border:0" alt="" /></p></noscript>
 <!-- End Piwik Tracking Code -->
 
 </body>
