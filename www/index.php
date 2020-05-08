@@ -98,6 +98,12 @@ li {
 	    list-style-type: none;
 	    display:table;
 }
+
+/* Fix layer selectors overflow */
+.olControlLayerSwitcher {
+	overflow-y: auto;
+	bottom: 0px;
+}
 </style>
 <script src="/libs/ol/OpenLayers.js"></script>
 <script src="mirror.ajax.googleapis.com.ajax.libs.jquery.1.7.2.jquery.min.js"></script>
