@@ -72,6 +72,13 @@ var all_available_styles = [
         attribution: 'Calque &copy; ybon',
         description: 'openriverboatmap de ybon'
     },
+    {
+        id: 'cyclosm',
+        name: 'cyclosm',
+        tile_urls: ['https://a.tile-cyclosm.openstreetmap.fr/cyclosm/${z}/${x}/${y}.png', 'https://b.tile-cyclosm.openstreetmap.fr/cyclosm/${z}/${x}/${y}.png', 'https://c.tile-cyclosm.openstreetmap.fr/cyclosm/${z}/${x}/${y}.png'],
+        attribution: 'Calque &copy; CyclOSM',
+        description: 'CyclOSM (rendu cyclable)'
+    },
 ];
 
 // overlays (transparent)
@@ -272,5 +279,12 @@ var all_available_overlays = [
         name: 'brocas',
         tile_urls: 'http://wms.openstreetmap.fr/tms/1.0.0/brocas_2013/${z}/${x}/${y}.png',
         opacity: 0.5
-    }
+    },
+    {
+        id: 'cyclosm-lite',
+        name: 'cyclosm-lite',
+        tile_urls: ['https://a.tile-cyclosm.openstreetmap.fr/cyclosm-lite/${z}/${x}/${y}.png', 'https://b.tile-cyclosm.openstreetmap.fr/cyclosm-lite/${z}/${x}/${y}.png', 'https://c.tile-cyclosm.openstreetmap.fr/cyclosm-lite/${z}/${x}/${y}.png'],
+        attribution: 'Calque &copy; CyclOSM',
+        description: 'CyclOSM (surcouche cyclable)'
+    },
 ];
