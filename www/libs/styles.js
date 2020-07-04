@@ -113,32 +113,11 @@ var all_available_overlays = [
         description: 'Voies importantes sans ref en surbrillance'
     },
     {
-        id: 'noref-notertiary',
-        name: 'Pas de ref (sauf tertiary)',
-        tile_urls: [base_url[0] + 'noref-notertiary/${z}/${x}/${y}.png', base_url[1] + 'noref-notertiary/${z}/${x}/${y}.png', base_url[2] + 'noref-notertiary/${z}/${x}/${y}.png'],
-        attribution: 'Calque &copy; <a href="https://wiki.openstreetmap.org/wiki/User:Sletuffe">sly</a>',
-        description: '',
-    },
-    {
         id: 'fixme',
         name: 'Fixme tags',
         tile_urls: [base_url[0] + 'fixme/${z}/${x}/${y}.png', base_url[1] + 'fixme/${z}/${x}/${y}.png', base_url[2] + 'fixme/${z}/${x}/${y}.png'],
         attribution: 'Calque &copy; <a href="https://wiki.openstreetmap.org/wiki/User:Sletuffe">sly</a>',
         description: 'Elements possédant un tag fixme en surbrillance'
-    },
-    {
-        id: 'note',
-        name: 'Note tags',
-        tile_urls: [base_url[0] + 'note/${z}/${x}/${y}.png', base_url[1] + 'note/${z}/${x}/${y}.png', base_url[2] + 'note/${z}/${x}/${y}.png'],
-        attribution: 'Calque &copy; <a href="https://wiki.openstreetmap.org/wiki/User:Sletuffe">sly</a>',
-        description: 'Elements possédant un tag note en surbrillance'
-    },
-    {
-        id: 'my_own',
-        name: 'my_own',
-        tile_urls: [base_url[0] + 'my_own/${z}/${x}/${y}.png', base_url[1] + 'my_own/${z}/${x}/${y}.png', base_url[2] + 'my_own/${z}/${x}/${y}.png'],
-        attribution: 'Calque &copy; <a href="https://wiki.openstreetmap.org/wiki/User:Sletuffe">sly</a>',
-        description: 'Attribut OSM (non documenté, expérimental) validate:my_own=yes',
     },
     {
         id: 'admin2',
@@ -236,13 +215,6 @@ var all_available_overlays = [
         name: 'Ways with admin boundary',
         tile_urls: [base_url[0] + 'admin_boundary/${z}/${x}/${y}.png', base_url[1] + 'admin_boundary/${z}/${x}/${y}.png', base_url[2] + 'admin_boundary/${z}/${x}/${y}.png'],
         attribution: 'Calque &copy; <a href="https://wiki.openstreetmap.org/wiki/User:Sletuffe">sly</a>',
-        description: '',
-    },
-    {
-        id: 'bano',
-        name: 'BANO - Couverture',
-        tile_urls: [base_url[0] + 'bano/${z}/${x}/${y}.png', base_url[1] + 'bano/${z}/${x}/${y}.png', base_url[2] + 'bano/${z}/${x}/${y}.png'],
-        attribution: '<a href="https://wiki.openstreetmap.org/wiki/WikiProject_France/WikiProject_Base_Adresses_Nationale_Ouverte_(BANO)">BANO</a> - Calque &copy; <a href="https://wiki.openstreetmap.org/wiki/User:Cquest">cquest</a>',
         description: '',
     },
     {
